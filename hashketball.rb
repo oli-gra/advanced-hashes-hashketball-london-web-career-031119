@@ -167,20 +167,24 @@ def player_stats(name)
   end
 end
 
-def big_shoe_rebounds
-  biggest_shoe=0
-  rebounds=0
+def search_bigmost_stat (search,stat)
+  bigmost = 0
+  answer = 0
   game_hash.each do |home_away,team_info|
     team_info.each do |team_data,players|
       if team_data == :players 
         players.each do |name,stats|
-          if stats[:shoe] > biggest_shoe
-            biggest_shoe = stats[:shoe]
-            rebounds = stats[:rebounds]
+          if stats[search] > bigmost
+            bigmost = stats[search]
+            answer = stats[stats]
           end
         end
       end
     end
   end
-  rebounds
+  answer
+end
+
+def big_shoe_rebounds
+  search_bigmost_stat (:shoe,:rebounds)
 end
