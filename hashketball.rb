@@ -145,7 +145,6 @@ def team_names
 end
 
 def player_numbers(team)
-  binding.pry
   if name == "Brooklyn Nets"
      game_hash[:home][:players].map { |player,stats| stats[:number] } 
   else game_hash[:away][:players].map { |player,stats| stats[:number] }
