@@ -130,12 +130,8 @@ def shoe_size(name)
 end
 
 def team_colors(name)
-  case name
-  when "Brooklyn Nets"
-    return game_hash[:home][:colors]
-  when "Charlotte Hornets"
-    return game_hash[:away][:colors]
-  end
+  return game_hash[:home][:colors] if name = "Brooklyn Nets"
+  return game_hash[:away][:colors] if name = "Charlotte Hornets"
 end
 
 def team_names
@@ -147,12 +143,7 @@ def team_names
 end
 
 def player_numbers(team)
-  case team
-  when "Brooklyn Nets"
-    return game_hash[:home][:players].map { |player,stats| stats[:number] }
-  when "Charlotte Hornets"
-    return game_hash[:away][:players].map { |player,stats| stats[:number] }
-  end
+  "Brooklyn Nets" == team ? game_hash[:home][:players].map { |player,stats| stats[:number] } : game_hash[:away][:players].map { |player,stats| stats[:number] }
 end
 
 def player_stats(name)
@@ -182,5 +173,8 @@ def big_shoe_rebounds
       end
     end
   end
-  rebounds
+end
+
+def big_shoe_rebounds
+  return search_bigmost_stat :shoe,:rebounds
 end
