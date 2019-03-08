@@ -130,11 +130,9 @@ def shoe_size(name)
 end
 
 def team_colors(name)
-  case name
-  when "Brooklyn Nets"
-    return game_hash[:home][:colors]
-  when "Charlotte Hornets"
-    return game_hash[:away][:colors]
+  if name == "Brooklyn Nets"
+    game_hash[:home][:colors]
+  else game_hash[:away][:colors]
   end
 end
 
@@ -147,11 +145,9 @@ def team_names
 end
 
 def player_numbers(team)
-  case team
-  when "Brooklyn Nets"
-    return game_hash[:home][:players].map { |player,stats| stats[:number] }
-  when "Charlotte Hornets"
-    return game_hash[:away][:players].map { |player,stats| stats[:number] }
+  if team == "Brooklyn Nets"
+     game_hash[:home][:players].map { |player,stats| stats[:number] } 
+  else game_hash[:away][:players].map { |player,stats| stats[:number] }
   end
 end
 
