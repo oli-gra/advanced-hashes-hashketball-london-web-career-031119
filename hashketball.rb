@@ -130,7 +130,6 @@ def shoe_size(name)
 end
 
 def team_colors(name)
-  binding.pry
   game_hash[:home][:colors] if name == "Brooklyn Nets"
   game_hash[:away][:colors]
 end
