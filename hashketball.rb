@@ -179,7 +179,3 @@ def big_shoe_rebounds
     end
   end
 end
-
-def big_shoe_rebounds
-  return search_bigmost_stat :shoe,:rebounds
-end
