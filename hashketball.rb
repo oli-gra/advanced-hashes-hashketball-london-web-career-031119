@@ -130,8 +130,8 @@ def shoe_size(name)
 end
 
 def team_colors(name)
-  return game_hash[:home][:colors] if name = "Brooklyn Nets"
-  return game_hash[:away][:colors] if name = "Charlotte Hornets"
+  game_hash[:home][:colors] if name = "Brooklyn Nets"
+  return game_hash[:away][:colors]
 end
 
 def team_names
