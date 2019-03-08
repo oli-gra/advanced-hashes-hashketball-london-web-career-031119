@@ -145,9 +145,10 @@ def team_names
 end
 
 def player_numbers(team)
-  game_hash[:home][:players].map { |player,stats| stats[:number] } if name == "Brooklyn Nets"
-  
-  game_hash[:away][:players].map { |player,stats| stats[:number] }
+  if name == "Brooklyn Nets"
+    game_hash[:home][:players].map { |player,stats| stats[:number] } 
+  else game_hash[:away][:players].map { |player,stats| stats[:number] }
+  end
 end
 
 def player_stats(name)
