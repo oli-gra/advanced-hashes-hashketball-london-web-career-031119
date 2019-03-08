@@ -131,8 +131,8 @@ end
 
 def team_colors(name)
   binding.pry
-  game_hash[:home][:colors] if name = "Brooklyn Nets"
-  return game_hash[:away][:colors]
+  game_hash[:home][:colors] if name == "Brooklyn Nets"
+  game_hash[:away][:colors]
 end
 
 def team_names
@@ -144,7 +144,7 @@ def team_names
 end
 
 def player_numbers(team)
-  game_hash[:home][:players].map { |player,stats| stats[:number] } if name = "Brooklyn Nets"
+  game_hash[:home][:players].map { |player,stats| stats[:number] } if name == "Brooklyn Nets"
   
   game_hash[:away][:players].map { |player,stats| stats[:number] }
 end
